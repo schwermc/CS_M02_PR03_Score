@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f9e9542d21cf443bf8b2dcbc74fa89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartDelay: 1
   completeLevelUI: {fileID: 0}
+  endGame: {fileID: 0}

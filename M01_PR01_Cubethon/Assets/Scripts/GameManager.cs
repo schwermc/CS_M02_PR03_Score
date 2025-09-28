@@ -1,12 +1,20 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
-    public float restartDelay = 1f;
     public GameObject completeLevelUI;
     bool gameEnded = false;
+
+    private EndGame endGame;
+    private ChangeColor changeColor;
+    private ChangeShape changeShape;
+
+    void Start()
+    {
+        endGame = gameObject.AddComponent<EndGame>();
+        changeColor = gameObject.AddComponent<ChangeColor>();
+        changeShape = gameObject.AddComponent<ChangeShape>();
+    }
 
     public void CompleteLevel()
     {
@@ -19,13 +27,9 @@ public class GameManager : MonoBehaviour
         if (gameEnded == false)
         {
             gameEnded = true;
-            Debug.Log("Game Over");
-            Invoke("Restart", restartDelay);
+            endGame.endTheGame();
+            changeColor.colorChange();
+            changeShape.sizeChange();
         }
-    }
-
-    void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

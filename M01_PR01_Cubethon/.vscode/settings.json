@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "M01_DV01_Cubethon.sln"
+    "dotnet.defaultSolution": "M01_PR01_Cubethon.sln"
 }
